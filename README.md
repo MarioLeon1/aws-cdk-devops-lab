@@ -1,3 +1,10 @@
+# Demostración del laboratorio
+
+El README a partir de aquí es el original. Modifico esta sección para adjuntar las imágenes que demuestran la completación del laboratorio:
+
+![image](https://github.com/user-attachments/assets/3c5e236c-1e88-4bef-9be8-5fa872a696fe)
+![image](https://github.com/user-attachments/assets/213a4de2-5a84-4ad7-b648-919632efe58a)
+
 # aws-cdk-playground-python
 
 El objetivo es preparar el entorno para trabajar con AWS CDK con Python.
