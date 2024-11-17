@@ -1,0 +1,19 @@
+{
+  "version": "38.0.1",
+  "files": {
+    "af309df1330f9c8afc4c0dd7ba4d6c4de89b8922660b7a5042c9a2d3d67a69df": {
+      "source": {
+        "path": "CdkIamLabStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "af309df1330f9c8afc4c0dd7ba4d6c4de89b8922660b7a5042c9a2d3d67a69df.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

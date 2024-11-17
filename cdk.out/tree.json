@@ -1,0 +1,156 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "CdkIamLabStack": {
+        "id": "CdkIamLabStack",
+        "path": "CdkIamLabStack",
+        "children": {
+          "PowerUsersGroup": {
+            "id": "PowerUsersGroup",
+            "path": "CdkIamLabStack/PowerUsersGroup",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdkIamLabStack/PowerUsersGroup/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Group",
+                  "aws:cdk:cloudformation:props": {
+                    "groupName": "power-users",
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/PowerUserAccess"
+                          ]
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnGroup",
+                  "version": "2.167.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.Group",
+              "version": "2.167.1"
+            }
+          },
+          "PowerUser": {
+            "id": "PowerUser",
+            "path": "CdkIamLabStack/PowerUser",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdkIamLabStack/PowerUser/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::User",
+                  "aws:cdk:cloudformation:props": {
+                    "groups": [
+                      {
+                        "Ref": "PowerUsersGroup21994209"
+                      }
+                    ],
+                    "userName": "power-user-cdk"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnUser",
+                  "version": "2.167.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.User",
+              "version": "2.167.1"
+            }
+          },
+          "PowerUserAccessKey": {
+            "id": "PowerUserAccessKey",
+            "path": "CdkIamLabStack/PowerUserAccessKey",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::IAM::AccessKey",
+              "aws:cdk:cloudformation:props": {
+                "userName": {
+                  "Ref": "PowerUser296D83CC"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.CfnAccessKey",
+              "version": "2.167.1"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "CdkIamLabStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "CdkIamLabStack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.167.1"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "CdkIamLabStack/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.167.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.4.2"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "CdkIamLabStack/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.167.1"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "CdkIamLabStack/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.167.1"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.167.1"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.4.2"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.167.1"
+    }
+  }
+}
